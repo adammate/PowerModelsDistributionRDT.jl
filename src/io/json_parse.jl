@@ -341,7 +341,7 @@ function json2pm_load!(data::Dict{String,Any}, pm_data::Dict{String,Any}, lookup
 
         load_data[id]["model"] = _PMD.POWER
         load_data[id]["connections"] = [i for i in 1:pm_data["conductors"] if load["has_phase"][i]]
-        push!(load_data[id]["connections"], 4) # 4 = neutral
+        # push!(load_data[id]["connections"], 4) # 4 = neutral
         load_data[id]["configuration"] = _PMD.WYE
         load_data[id]["bus"] = string(lookups[:bus][load["node_id"]])
         load_data[id]["pd_nom"] = load_data[id]["pd"]
